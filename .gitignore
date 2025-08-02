@@ -93,4 +93,4 @@ Thumbs.db
 .vite/
 
 # Analysis results
-analysis-results/
+./analysis-results/

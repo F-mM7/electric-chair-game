@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "chunkSize": 1000,
+  "totalChunks": 1,
+  "totalStates": 1,
+  "hashToChunk": {
+    "fff0000": 0
+  }
+}
