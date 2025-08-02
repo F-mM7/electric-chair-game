@@ -1,0 +1,45 @@
+{
+  "name": "electric-chair-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite",
+    "analyze": "tsx src/scripts/analyze.ts",
+    "generate-hashes": "tsx src/scripts/generateHashes.ts",
+    "display-state": "tsx src/scripts/displayState.ts",
+    "debug-strategy": "tsx src/scripts/debug-strategy.ts",
+    "debug-transition": "tsx src/scripts/debug-transition.ts",
+    "calculate-hash": "tsx src/scripts/calculate-hash.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watabe-futa/electric-chair-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/watabe-futa/electric-chair-game/issues"
+  },
+  "homepage": "https://github.com/watabe-futa/electric-chair-game#readme",
+  "dependencies": {
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "javascript-lp-solver": "^0.4.24",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tsx": "^4.20.3",
+    "vite": "^7.0.6"
+  }
+}

@@ -1,0 +1,153 @@
+.score-table-container {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.score-table-container h3 {
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-card);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.score-table th,
+.score-table td {
+  padding: 8px 6px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.score-table th {
+  background-color: var(--bg-tertiary);
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.player-header {
+  min-width: 80px;
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.round-header {
+  min-width: 35px;
+  font-size: 0.85rem;
+}
+
+.sum-header {
+  min-width: 40px;
+  background-color: rgba(150, 150, 150, 0.8) !important;
+  color: var(--text-primary) !important;
+  font-weight: bold;
+}
+
+.player-label {
+  background-color: var(--bg-tertiary);
+  font-weight: bold;
+  color: var(--text-primary);
+  text-align: left;
+  padding-left: 10px;
+}
+
+.score-cell {
+  position: relative;
+  min-width: 35px;
+  font-weight: 500;
+}
+
+.score-cell:empty {
+  background-color: var(--bg-secondary);
+}
+
+.sum-cell {
+  background-color: rgba(100 100, 100, 0.8);
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.player1-row .score-cell {
+  color: var(--accent-primary);
+}
+
+.player2-row .score-cell {
+  color: var(--accent-error);
+}
+
+/* 電気ショックの表示 */
+.score-cell:has-text("⚡") {
+  background-color: rgba(255, 152, 0, 0.1);
+  font-size: 1.1rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .score-table-container {
+    margin: 15px 0;
+    padding: 10px;
+  }
+
+  .score-table-container h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .score-table th,
+  .score-table td {
+    padding: 6px 4px;
+    font-size: 0.8rem;
+  }
+
+  .player-header,
+  .player-label {
+    min-width: 70px;
+    font-size: 0.75rem;
+  }
+
+  .round-header {
+    min-width: 30px;
+    font-size: 0.75rem;
+  }
+
+  .sum-cell {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .score-table th,
+  .score-table td {
+    padding: 4px 2px;
+    font-size: 0.75rem;
+  }
+
+  .player-header,
+  .player-label {
+    min-width: 60px;
+    font-size: 0.7rem;
+  }
+
+  .round-header {
+    min-width: 25px;
+    font-size: 0.7rem;
+  }
+
+  .sum-cell {
+    font-size: 0.8rem;
+  }
+}

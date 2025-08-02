@@ -1,0 +1,17 @@
+{
+  "evaluation": {
+    "player1Win": 1.0,
+    "player2Win": -1.0,
+    "draw": -0.032
+  },
+  "analysis": {
+    "maxBatchSize": 1000,
+    "precisionDigits": 6,
+    "saveInterval": 100,
+    "outputDirectory": "./analysis-results"
+  },
+  "performance": {
+    "maxCacheSize": 100000,
+    "chunkSize": 1000
+  }
+}
