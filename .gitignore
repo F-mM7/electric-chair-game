@@ -92,5 +92,3 @@ Thumbs.db
 # Vite cache
 .vite/
 
-# Analysis results
-./analysis-results/
