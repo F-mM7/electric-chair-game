@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "chunkSize": 1000,
+  "totalChunks": 1,
+  "totalStates": 13,
+  "hashToChunk": {
+    "17ff3000": 0,
+    "1bff2c00": 0,
+    "1dff2800": 0,
+    "1eff2400": 0,
+    "1f7f2000": 0,
+    "1fbf1c00": 0,
+    "1fdf1800": 0,
+    "1fef1400": 0,
+    "1ff71000": 0,
+    "1ffb0c00": 0,
+    "1ffd0800": 0,
+    "1ffe0400": 0,
+    "1fff0004": 0
+  }
+}

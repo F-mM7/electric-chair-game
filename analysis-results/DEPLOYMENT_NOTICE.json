@@ -1,0 +1,15 @@
+{
+  "message": "Due to GitHub Pages size limitations, only turns 0-6 and 13-14 are available.",
+  "availableTurns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    13,
+    14
+  ],
+  "fullDataInfo": "For complete analysis data (turns 7-12), please contact the repository owner."
+}
