@@ -20,16 +20,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/watabe-futa/electric-chair-game.git"
+    "url": "git+https://github.com/f-mm7/electric-chair-game.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/watabe-futa/electric-chair-game/issues"
+    "url": "https://github.com/f-mm7/electric-chair-game/issues"
   },
-  "homepage": "https://watabe-futa.github.io/electric-chair-game",
+  "homepage": "https://f-mm7.github.io/electric-chair-game",
   "dependencies": {
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
