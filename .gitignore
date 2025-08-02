@@ -92,3 +92,6 @@ Thumbs.db
 # Vite cache
 .vite/
 
+# Analysis results (large files)
+/analysis-results/
+

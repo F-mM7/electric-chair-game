@@ -9,8 +9,16 @@ export class StaticStrategyAPI {
   private cache: Map<string, any> = new Map();
   private baseUrl: string;
 
-  constructor(baseUrl = '/analysis-results') {
-    this.baseUrl = baseUrl;
+  constructor(baseUrl?: string) {
+    // GitHub Pages用のベースパスを考慮
+    if (baseUrl) {
+      this.baseUrl = baseUrl;
+    } else {
+      // 現在のページのパスから基準パスを取得
+      const pathname = window.location.pathname;
+      const base = pathname.substring(0, pathname.lastIndexOf('/') + 1);
+      this.baseUrl = `${base}analysis-results`;
+    }
   }
 
   /**
@@ -24,8 +32,10 @@ export class StaticStrategyAPI {
     }
 
     try {
-      const response = await fetch(`${this.baseUrl}/turn-${turn}/index.json`);
+      const url = `${this.baseUrl}/turn-${turn}/index.json`;
+      const response = await fetch(url);
       if (!response.ok) {
+        console.error(`Failed to load index for turn ${turn}: ${response.status} ${response.statusText}`);
         return null;
       }
       
@@ -71,6 +81,14 @@ export class StaticStrategyAPI {
   public async getStrategy(stateHash: number): Promise<OptimalStrategy | null> {
     try {
       const state = decodeGameStateHash(stateHash);
+      
+      // デプロイメント通知を確認
+      const deploymentNotice = await this.checkDeploymentNotice();
+      if (deploymentNotice && !deploymentNotice.availableTurns.includes(state.turn)) {
+        console.warn(`Turn ${state.turn} data is not available in this deployment. ${deploymentNotice.fullDataInfo}`);
+        return null;
+      }
+      
       const index = await this.loadTurnIndex(state.turn);
       
       if (!index || !index.hashToChunk) {
@@ -93,6 +111,29 @@ export class StaticStrategyAPI {
       console.error('Failed to get strategy:', error);
       return null;
     }
+  }
+
+  /**
+   * デプロイメント通知を確認
+   */
+  private async checkDeploymentNotice(): Promise<any> {
+    if (this.cache.has('deployment-notice')) {
+      return this.cache.get('deployment-notice');
+    }
+
+    try {
+      const response = await fetch(`${this.baseUrl}/DEPLOYMENT_NOTICE.json`);
+      if (response.ok) {
+        const notice = await response.json();
+        this.cache.set('deployment-notice', notice);
+        return notice;
+      }
+    } catch (error) {
+      // 通知ファイルがない場合は全データが利用可能と仮定
+    }
+    
+    this.cache.set('deployment-notice', null);
+    return null;
   }
 
   /**
