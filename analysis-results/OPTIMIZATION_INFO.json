@@ -1,0 +1,15 @@
+{
+  "originalSizeBytes": 4643290159,
+  "optimizedSizeBytes": 141972513,
+  "compressionRatio": 0.030575843451182437,
+  "reductionPercent": "96.9",
+  "format": {
+    "p1": "player1Probabilities (compressed)",
+    "p2": "player2Probabilities (compressed)",
+    "ev": "expectedValue",
+    "calc": "isCalculated",
+    "cn": "chunkNumber",
+    "s": "strategies"
+  },
+  "arrayCompression": "Run-length encoding: [count, value] for repeated values"
+}
